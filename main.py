@@ -13,8 +13,8 @@ def readCsv(filePath):
     return df
 
 def selectTopRecords(df):
-    # Sort by 'division' and 'points' in descending order and select top 3
-    top_records = df.sort_values(by=['division', 'points'], ascending=[False, False]).head(3)
+    # Sort by 'points' and select top 3
+    top_records = df.sort_values(by=['points'], ascending=False).head(3)
     return top_records
 
 def formatYaml(df):
@@ -57,6 +57,6 @@ def main():
 
     # Output the result
     print(yaml_output)
-    
+
 if __name__ == "__main__":
     main()
