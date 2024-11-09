@@ -1,8 +1,12 @@
 import pandas as pd
 import sys
 import yaml
+import os
 
 def readCsv(filePath):
+    if not os.path.exists(filePath):
+        print(f"File '{filePath}' not found.")
+        sys.exit(1)
     # Read the CSV file into a DataFrame
     df = pd.read_csv(filePath)
 
